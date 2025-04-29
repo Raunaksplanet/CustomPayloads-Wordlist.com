@@ -80,3 +80,54 @@ print(open('/etc/issue').read())  # System identification string
 
 open('/tmp/bug-bounty-hunter.txt', 'w').write('B1scuit Ethical hacker is here')
 print(open('/tmp/bug-bounty-hunter.txt').read())
+
+
+
+import os
+
+# User and system information
+print(os.popen('whoami').read())  # Current logged-in user
+print(os.popen('hostname').read())  # System hostname
+print(os.popen('uptime').read())  # System uptime
+
+# Network-related commands
+print(os.popen('ifconfig').read())  # Network interfaces and their configurations
+print(os.popen('netstat -tuln').read())  # Network connections
+print(os.popen('ping -c 4 8.8.8.8').read())  # Ping Google DNS server
+
+# Disk and filesystem information
+print(os.popen('df -h').read())  # Disk usage information
+print(os.popen('du -sh /path/to/directory').read())  # Disk usage for a specific directory
+print(os.popen('lsblk').read())  # List block devices
+
+# Process and system monitoring
+print(os.popen('ps aux').read())  # List all running processes
+print(os.popen('top -n 1').read())  # Show system resource usage (one iteration)
+print(os.popen('free -h').read())  # Memory usage
+
+# System logs and configurations
+print(os.popen('dmesg').read())  # Kernel ring buffer messages
+print(os.popen('journalctl').read())  # View systemd logs (if using systemd)
+print(os.popen('cat /var/log/syslog').read())  # System logs
+
+# Package management (Debian-based systems)
+print(os.popen('apt list --installed').read())  # List installed packages
+print(os.popen('dpkg -l').read())  # Detailed list of installed packages
+
+# Web server commands (Apache)
+print(os.popen('apache2ctl -S').read())  # Apache server status and configuration
+print(os.popen('systemctl status apache2').read())  # Check Apache service status
+
+# SSH and security commands
+print(os.popen('sshd -T').read())  # Check SSH server configuration
+print(os.popen('sudo lsof -i -n -P').read())  # List open network connections
+
+# File system and user commands
+print(os.popen('ls -l /etc/').read())  # List files in the /etc directory
+print(os.popen('chmod 755 /path/to/file').read())  # Change file permissions
+print(os.popen('chown user:user /path/to/file').read())  # Change file ownership
+
+# System information
+print(os.popen('uname -r').read())  # Kernel version
+print(os.popen('cat /proc/cpuinfo').read())  # CPU information
+print(os.popen('cat /proc/meminfo').read())  # Memory information
